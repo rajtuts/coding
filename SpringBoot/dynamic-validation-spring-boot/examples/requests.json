@@ -1,0 +1,31 @@
+POST http://localhost:8080/api/validation
+
+{
+  "dtoType": "USER",
+  "validationType": "USER_CREATE",
+  "data": {
+    "firstName": "John",
+    "lastName": "Smith",
+    "email": "john@gmail.com",
+    "phone": "9876543210",
+    "password": "password123",
+    "confirmPassword": "password123",
+    "age": 25
+  }
+}
+
+Dynamic field example:
+
+{
+  "dtoType": "USER",
+  "validationType": "USER_UPDATE",
+  "additionalFields": {
+    "firstName": "required"
+  },
+  "data": {
+    "firstName": "",
+    "email": "john@gmail.com",
+    "phone": "9876543210",
+    "age": 25
+  }
+}
